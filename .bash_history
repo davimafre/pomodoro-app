@@ -18,3 +18,5 @@ echo "Windows Path: $(wslpath -w $HOME)"
 cd ~
 pwd
 claude
+CLAUDE
+claude
