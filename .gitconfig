@@ -1,0 +1,3 @@
+[safe]
+	directory = /home/davi
+	directory = %(prefix)///wsl.localhost/Ubuntu/home/davi
