@@ -14,3 +14,7 @@ node -v
 sudo npm install -g npm@latest
 claude
 explorer.exe .
+echo "Windows Path: $(wslpath -w $HOME)"
+cd ~
+pwd
+claude
