@@ -1,0 +1,139 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.pomodoro-app {
+  background-color: var(--surface-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(93, 66, 241, 0.1) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(46, 192, 168, 0.1) 0%, transparent 20%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.mode-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.mode-buttons button {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 24px;
+  font-weight: 500;
+}
+
+.mode-buttons button.active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.timer-display {
+  font-size: 6rem;
+  font-weight: 700;
+  margin: 1.5rem 0;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.2));
+  position: relative;
+}
+
+.timer-display::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-color), transparent);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+  opacity: 0.5;
+}
+
+.timer-controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.control-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 28px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 12px rgba(93, 66, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.control-button:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--text-color);
+  box-shadow: none;
+}
+
+.control-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.control-button:hover::before {
+  left: 100%;
+}
+
+@media (max-width: 480px) {
+  .timer-display {
+    font-size: 4rem;
+  }
+  
+  .control-button {
+    padding: 0.75rem 1.5rem;
+  }
+}
